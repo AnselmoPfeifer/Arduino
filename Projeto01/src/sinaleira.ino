@@ -1,29 +1,23 @@
 #include <Arduino.h>
 
-// Entradas de Sinais
-int ledVermelho = 4;
-int ledVerde = 5;
-int botao = 6;
-int botao = 7;
+const int buttonPin = 2;
+const int ledVerde = 3;
+const int ledVermelho = 4;
 
-//Configuracoes de Pinos
+int buttonState = 0;
+
 void setup()
 {
   pinMode(ledVermelho, OUTPUT);
   pinMode(ledVerde, OUTPUT);
-  pinMode(botao, INPUT);
+  pinMode(buttonPin, INPUT);
 }
 
-//Execução do codigo
-void loop()
-{
-  digitalWrite(ledVermelho, HIGH);
-  delay(1000);
-  digitalWrite(ledVermelho, LOW);
-  delay(1000);
-  digitalWrite(ledVerde, HIGH);
-  delay(1000);
-  digitalWrite(ledVerde, LOW);
-  delay(1000);
-
+void loop(){
+  buttonState = digitalRead(buttonPin);
+  if (buttonState == HIGH){
+    digitalWrite(ledVermelho, HIGH);
+  }else{
+      digitalWrite(ledVerde, HIGH);
+  }
 }
