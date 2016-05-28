@@ -1,23 +1,25 @@
 #include <Arduino.h>
 
-const int buttonPin = 2;
-const int ledVerde = 3;
-const int ledVermelho = 4;
+const int VERDE = 4;
+const int VERMELHO = 5;
+const int  BUTTON = 6;
 
-int buttonState = 0;
+int STATE = 0;
 
-void setup()
-{
-  pinMode(ledVermelho, OUTPUT);
-  pinMode(ledVerde, OUTPUT);
-  pinMode(buttonPin, INPUT);
+void setup(){
+  pinMode(VERDE, OUTPUT);
+  pinMode(VERMELHO, OUTPUT);
+  pinMode(BUTTON, INPUT);
+
+  digitalWrite(VERDE, LOW);
+  digitalWrite(VERMELHO, LOW);
 }
 
 void loop(){
-  buttonState = digitalRead(buttonPin);
-  if (buttonState == HIGH){
-    digitalWrite(ledVermelho, HIGH);
+  STATE = digitalRead(BUTTON);
+  if (STATE == HIGH) {
+      digitalWrite(VERMELHO, HIGH);
   }else{
-      digitalWrite(ledVerde, HIGH);
+    digitalWrite(VERMELHO, LOW);
   }
 }
