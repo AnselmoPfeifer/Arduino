@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 #include <Arduino.h>
 
-=======
->>>>>>> Gelson
 const int LED = 5;
 const int STEP = 10;
 const int PWM_MIN = 0;
