@@ -1,8 +1,8 @@
 #include <Arduino.h>
 
-int ledVermelho = 2;
-int ledVerde = 3;
-int botao = 4;
+int ledVermelho = 4;
+int ledVerde = 5;
+int botao = 6;
 
 void setup()
 {
